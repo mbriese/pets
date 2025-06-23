@@ -37,7 +37,7 @@ export default function RootLayout({
         {children}
 
         {/* Footer */}
-        <footer className="bg-blue-300 text-white text-center py-4">
+        <footer className="bg-gray-500 text-white text-center py-0.5 ">
             <p>&copy; 2025 Pet Website. All rights reserved.</p>
         </footer>
         </body>
