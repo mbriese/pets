@@ -1,16 +1,10 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -23,4 +17,33 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  /* Apply padding and margin to body for consistent spacing */
+  body {
+    @apply p-4 m-0;
+    /* Apply padding to all sides and remove default margin */
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Optionally, apply padding to the container to keep content well spaced */
+  .container {
+    @apply mx-auto px-4; /* Center content and add horizontal padding */
+  }
+
+  /* Optional: Set margin and padding for headings, paragraphs, etc., if you need */
+  h1, h2, h3, h4, h5, h6 {
+    @apply my-4; /* Vertical margin for headers */
+  }
+
+  p {
+    @apply mb-4; /* Margin-bottom for paragraphs */
+  }
+
+  /* You can also set default margins for specific elements */
+  ul, ol {
+    @apply list-inside mb-4; /* Adjust list styling */
+  }
+
 }
