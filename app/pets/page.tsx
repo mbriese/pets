@@ -1,31 +1,31 @@
 import React from 'react';
+import Card from '../components/Card'; // Import the Card component
 
-interface Pet {
-    name: string;
-    type: string;
-    age: number;
-}
 
 const Pets: React.FC = () => {
-    const pets: Pet[] = [
-        { name: 'Buddy', type: 'Dog', age: 5 },
-        { name: 'Whiskers', type: 'Cat', age: 3 },
-        { name: 'Goldie', type: 'Fish', age: 2 },
+    const pets = [
+        { name: 'Bella', type: 'Labrador Retriever', age: '3 years' },
+        { name: 'Max', type: 'Golden Retriever', age: '5 years' },
+        { name: 'Charlie', type: 'Bulldog', age: '2 years' },
+        { name: 'Lucy', type: 'Poodle', age: '4 years' },
+        { name: 'Rocky', type: 'German Shepherd', age: '3 years' },
     ];
 
     return (
-        <div>
+        <>
             <h1>Pets Page</h1>
-    <ul>
-    {pets.map((pet, index) => (
-            <li key={index}>
-                <h3>{pet.name}</h3>
-                <p>Type: {pet.type}</p>
-    <p>Age: {pet.age}</p>
-    </li>
-))}
-    </ul>
-    </div>
+            <div className="container mx-auto p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {pets.map((pet, index) => (
+                    <Card
+                        key={index}
+                        name={pet.name}
+                        type={pet.type}
+                        age={pet.age}
+                    />
+                ))}
+            </div>
+        </>
+
 );
 };
 
