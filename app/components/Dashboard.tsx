@@ -3,12 +3,11 @@
 import React from "react";
 import Link from "next/link";
 import classnames from "classnames";
-import {usePathname, useRouter} from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const Dashboard = () => {
 
     const currentPath = usePathname();
-    const router = useRouter();
 
     const links = [
         { label: "Find the pets", href: "/pets" },
